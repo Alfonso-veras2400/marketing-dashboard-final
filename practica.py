@@ -31,97 +31,102 @@ st.markdown("""
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
     
     html, body, [class*="css"] {
-        font-family: 'Inter', sans-serif;  /* Fuente moderna y legible */
+        font-family: 'Inter', sans-serif;
     }
-    
-    .main {
-        background-color: #ffffff;  /* Fondo blanco */
-        color: #1a1a1a;  /* Texto oscuro */
-    }
-    
+
+    /* Fondo principal */
     .stApp {
-        background-color: #ffffff;  /* Fondo blanco para toda la app */
+        background-color: #ffffff;
+        color: #1a1a1a;
     }
-    
+
+    /* Encabezados */
     h1, h2, h3, h4, h5, h6 {
-        color: #0077cc !important;  /* Azul claro para encabezados */
+        color: #0077cc !important;
         font-weight: 600;
     }
-    
-    .stMetric {
-        background-color: #f0f8ff !important;  /* Fondo azul muy claro */
+
+    /* Métricas */
+    div[data-testid="stMetricValue"] {
+        background-color: #f0f8ff;
         border-radius: 10px;
-        padding: 15px;
-        border: 1px solid #b3e0ff;  /* Azul suave */
+        padding: 10px;
+        border: 1px solid #b3e0ff;
     }
-    
-    .stSelectbox, .stMultiSelect {
-        background-color: #f5fff5 !important;  /* Verde muy claro */
-        border: 1px solid #99e699 !important;  /* Verde borde */
+
+    /* Selectores */
+    div[data-baseweb="select"] {
+        background-color: #f5fff5;
+        border: 1px solid #99e699;
         border-radius: 8px;
-        color: #1a1a1a !important;
+        color: #1a1a1a;
     }
-    
-    .stSlider {
-        background-color: #f0f8ff !important;  /* Azul claro */
+
+    /* Sliders */
+    div[data-testid="stSlider"] {
+        background-color: #f0f8ff;
         border-radius: 8px;
         padding: 10px;
     }
-    
-    .sidebar .sidebar-content {
-        background-color: #f5fff5 !important;  /* Verde muy claro en la barra lateral */
+
+    /* Sidebar */
+    section[data-testid="stSidebar"] {
+        background-color: #f5fff5 !important;
     }
-    
-    .block-container {
+
+    /* Contenedor principal */
+    section.main > div {
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
-    
+
+    /* Botones */
     .stButton > button {
-        background-color: #33cc99 !important;  /* Verde brillante */
+        background-color: #33cc99 !important;
         color: white !important;
         border: none !important;
         border-radius: 6px !important;
         padding: 0.5rem 1rem !important;
         font-weight: 500 !important;
     }
-    
+
     .stButton > button:hover {
-        background-color: #29a87a !important;  /* Verde más oscuro al pasar el mouse */
+        background-color: #29a87a !important;
     }
-    
+
+    /* Tarjetas personalizadas */
     .metric-card {
-        background: linear-gradient(135deg, #f0f8ff, #f5fff5);  /* Gradiente azul-verde claro */
+        background: linear-gradient(135deg, #f0f8ff, #f5fff5);
         border-radius: 12px;
         padding: 20px;
         border: 1px solid #cce7ff;
         box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
-    
+
     .insight-box {
         background-color: #f0f8ff;
-        border-left: 4px solid #33cc99;  /* Verde como acento */
+        border-left: 4px solid #33cc99;
         padding: 15px;
         border-radius: 0 8px 8px 0;
         margin: 10px 0;
     }
-    
+
     .chart-container {
-        background-color: #ffffff;  /* Fondo blanco para gráficos */
+        background-color: #ffffff;
         border-radius: 12px;
         padding: 20px;
         border: 1px solid #e6e6e6;
         box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         margin-bottom: 20px;
     }
-    
+
     .footer {
         text-align: center;
         padding: 20px;
         color: #4d4d4d;
         font-size: 0.9em;
     }
-    
+
     .participant-card {
         background-color: #f5fff5;
         border-radius: 10px;
@@ -129,7 +134,7 @@ st.markdown("""
         border: 1px solid #99e699;
         margin: 5px 0;
     }
-    
+
     .emoji-header {
         font-size: 1.5em;
         margin-right: 10px;
