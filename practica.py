@@ -359,6 +359,7 @@ else:
             title="Distribución de Clientes por Edad",
             color_discrete_sequence=['#58a6ff']
         )
+
         fig.update_layout(
             plot_bgcolor='#161b22',
             paper_bgcolor='#161b22',
@@ -366,7 +367,9 @@ else:
             title_font_size=16,
             title_x=0.5
         )
+        fig.update_traces(xbins=dict(size=10))
         fig.update_traces(marker_line_width=1, marker_line_color="#0d1117")
+        fig.update_xaxes(dtick=10)
         st.plotly_chart(fig, use_container_width=True)
         st.caption("📊 Histograma mostrando la frecuencia de clientes por edad")
         st.markdown("</div>", unsafe_allow_html=True)
@@ -510,7 +513,7 @@ else:
         st.markdown("""
         <div class='insight-box'>
             <h4>🎯 Público Objetivo Principal</h4>
-            <p>La distribución de edades revela que el segmento seleccionado está compuesto principalmente por clientes entre <strong>{:.2f}</strong> años, lo que sugiere un enfoque en adultos jóvenes a medianos con potencial de compra moderado a alto.</p>
+            <p>El segmento seleccionado tiene un <strong>promedio de edad de {:.1f} años</strong>, lo que indica una base de clientes madura y estable, ideal para estrategias de fidelización y valor a largo plazo.</p> 
         </div>
         """.format(df_filtrado['Edad'].mean()), unsafe_allow_html=True)
         
@@ -529,8 +532,7 @@ else:
         st.markdown("""
         <div class='insight-box'>
             <h4>👥 Composición Demográfica</h4>
-            <p>El género dominante es <strong>{}</strong> con {} clientes, lo que indica que las estrategias de marketing deberían considerar preferencias específicas de este grupo.</p>
-        </div>
+            <p>El género dominante es <strong>{}</strong> con {:,} clientes, lo que indica que las estrategias de marketing deberían considerar preferencias específicas de este grupo.</p>
         """.format(
             df_filtrado['Genero'].mode()[0],
             df_filtrado['Genero'].value_counts().iloc[0]
